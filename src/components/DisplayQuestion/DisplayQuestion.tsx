@@ -36,8 +36,21 @@ const DisplayQuestion: React.FC<Props> = ({
       console.log("empty question array");
       return;
     }
+
     const index = Math.floor(Math.random() * questions.length);
-    setQuestion(questions[index]);
+    const baseQuestion = questions[index];
+
+    const target =
+      gameMode === "party" && party.length > 0
+        ? party[Math.floor(Math.random() * party.length)]
+        : "losowa osoba";
+
+    const textWithTarget = baseQuestion.text.replaceAll("{target}", target);
+
+    setQuestion({
+      ...baseQuestion,
+      text: textWithTarget,
+    });
   }
 
   useEffect(() => {
