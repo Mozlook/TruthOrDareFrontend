@@ -27,7 +27,11 @@ const CreateGame: React.FC<Props> = ({
   return (
     <div className="border-black border-4 flex flex-col items-center">
       Ustawienia Gry
-      <GameModePicker gameMode={gameMode} setGameMode={setGameMode} />
+      <GameModePicker
+        gameMode={gameMode}
+        setGameMode={setGameMode}
+        setParty={setParty}
+      />
       {gameMode === "party" && (
         <PartyCreator party={party} setParty={setParty} />
       )}
