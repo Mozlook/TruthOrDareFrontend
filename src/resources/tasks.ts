@@ -120,19 +120,19 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Zakręć butelką: musisz powiedzieć osobie trafionej coś, co cię w niej szczerze wkurza.",
+    text: "Musisz powiedzieć {target} coś, co cię w niej szczerze wkurza.",
     penalty: 2,
   },
   {
-    text: "Zakręć butelką: osoba trafiona wybiera ci nową ksywę imprezową i musisz się nią przedstawiać do końca gry.",
+    text: "{taret} wybiera ci nową ksywę imprezową i musisz się nią przedstawiać do końca gry.",
     penalty: 2,
   },
   {
-    text: "Zakręć butelką: powiedz osobie trafionej coś, czego nigdy jej nie powiedziałeś/nie powiedziałaś, bo było ci głupio.",
+    text: "Powiedz {target} coś, czego nigdy jej nie powiedziałeś/nie powiedziałaś, bo było ci głupio.",
     penalty: 2,
   },
   {
-    text: "Zakręć butelką: osoba trafiona wybiera, czy woli usłyszeć od ciebie szczery komplement, czy totalny roast.",
+    text: "{target} wybiera, czy woli usłyszeć od ciebie szczery komplement, czy totalny roast.",
     penalty: 2,
   },
   {
@@ -184,7 +184,7 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Pozwól komuś narysować ci coś na czole markerem zmywalnym (bez obraźliwych treści).",
+    text: "Pozwól {target} narysować ci coś na czole markerem zmywalnym.",
     penalty: 2,
   },
   {
@@ -220,7 +220,7 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Odegraj scenkę przypadkowego spotkania z ex w sklepie – z całą możliwą niezręcznością.",
+    text: "Odegraj scenkę przypadkowego spotkania z ex w sklepie – z całą możliwą niezręcznością. ( {target} gra twojego ex)",
     penalty: 2,
   },
   {
@@ -232,7 +232,7 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Zakręć butelką i zdejmij jedną część ubrania trafionej osoby.",
+    text: "Zdejmij jedną część ubrania {target} ",
     penalty: 2,
   },
   {
@@ -240,7 +240,7 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Zakręć butelką i zrób erotyczny masaż trafionej osobie.",
+    text: "Zrób erotyczny masaż {target} .",
     penalty: 2,
   },
   {
@@ -256,7 +256,7 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Zakręć butelką i ugryź trafioną osobę w szyję.",
+    text: "Ugryź {target} w szyję.",
     penalty: 2,
   },
   {
