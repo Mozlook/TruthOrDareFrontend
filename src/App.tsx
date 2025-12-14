@@ -1,21 +1,28 @@
 import { useState } from "react";
 import CreateGame from "./components/CreateGame";
-import type { QuestionsPackage } from "./models/models";
+import type { GameState, GameMode, QuestionsPackage } from "./models/models";
 
 function App() {
-    const [questionPackage, setQuestionPackage] = useState<QuestionsPackage>({
-        normal: false,
-        hard: false,
-        hardcore: false,
-    });
-    return (
-        <div className="flex justify-center min-h-screen ">
-            <CreateGame
-                questionsPackge={questionPackage}
-                setQuestionsPackage={setQuestionPackage}
-            />
-        </div>
-    );
+  const [gameState, setGameState] = useState<GameState>("menu");
+  const [gameMode, setGameMode] = useState<GameMode>("normal");
+  const [questionPackage, setQuestionPackage] = useState<QuestionsPackage>({
+    normal: false,
+    hard: false,
+    hardcore: false,
+  });
+  return (
+    <div className="flex justify-center min-h-screen ">
+      {gameState === "menu" && (
+        <CreateGame
+          setGameState={setGameState}
+          gameMode={gameMode}
+          setGameMode={setGameMode}
+          questionsPackge={questionPackage}
+          setQuestionsPackage={setQuestionPackage}
+        />
+      )}
+    </div>
+  );
 }
 
 export default App;
