@@ -1,20 +1,25 @@
 import type { GameMode, GameState, QuestionsPackage } from "../models/models";
 import GameModePicker from "./GameModePicker";
+import PartyCreator from "./PartyCreator";
 import QuestionsPackagePicker from "./QuestionsPackagePicker";
 
 type Props = {
-  setGameState: React.Dispatch<React.SetStateAction<GameState>>;
   gameMode: GameMode;
-  setGameMode: React.Dispatch<React.SetStateAction<GameMode>>;
   questionsPackge: QuestionsPackage;
+  party: string[];
+  setGameState: React.Dispatch<React.SetStateAction<GameState>>;
+  setGameMode: React.Dispatch<React.SetStateAction<GameMode>>;
   setQuestionsPackage: React.Dispatch<React.SetStateAction<QuestionsPackage>>;
+  setParty: React.Dispatch<React.SetStateAction<string[]>>;
 };
 const CreateGame: React.FC<Props> = ({
-  setGameState,
   gameMode,
-  setGameMode,
   questionsPackge,
+  party,
+  setGameState,
+  setGameMode,
   setQuestionsPackage,
+  setParty,
 }) => {
   function StartGame() {
     setGameState("game");
@@ -23,6 +28,9 @@ const CreateGame: React.FC<Props> = ({
     <div className="border-black border-4 flex flex-col items-center">
       Ustawienia Gry
       <GameModePicker gameMode={gameMode} setGameMode={setGameMode} />
+      {gameMode === "party" && (
+        <PartyCreator party={party} setParty={setParty} />
+      )}
       <QuestionsPackagePicker
         questionsPackage={questionsPackge}
         setQuestionPackage={setQuestionsPackage}

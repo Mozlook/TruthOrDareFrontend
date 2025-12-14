@@ -10,6 +10,7 @@ function App() {
     hard: false,
     hardcore: false,
   });
+  const [party, setParty] = useState<string[]>([]);
   return (
     <div className="flex justify-center min-h-screen ">
       {gameState === "menu" && (
@@ -19,6 +20,8 @@ function App() {
           setGameMode={setGameMode}
           questionsPackge={questionPackage}
           setQuestionsPackage={setQuestionPackage}
+          party={party}
+          setParty={setParty}
         />
       )}
     </div>
