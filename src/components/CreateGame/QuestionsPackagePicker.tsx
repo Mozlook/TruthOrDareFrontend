@@ -1,4 +1,4 @@
-import type { QuestionsPackage } from "../models/models";
+import type { QuestionsPackage } from "../../models/models";
 
 type Props = {
   questionsPackage: QuestionsPackage;

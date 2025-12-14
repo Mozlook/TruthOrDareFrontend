@@ -1,4 +1,6 @@
-export const normalTasks = [
+import type { Question } from "../models/models";
+
+export const normalTasks: Question[] = [
   {
     text: "Pokaż ostatnie 3 osoby, którym dałeś/dałaś polubienie na Instagramie lub TikToku i powiedz, za co ich lubisz.",
     penalty: 1,
@@ -8,7 +10,7 @@ export const normalTasks = [
     penalty: 1,
   },
   {
-    text: "Zakręć butelką: jeśli obie osoby się zgadzają, robicie sobie niezręczny, długi przytulas (10 sekund). Jeśli odmówisz – pijesz 1 kieliszek.",
+    text: "Razem z {target} robicie niezręczny, długi przytulas (10 sekund). Jeśli odmówisz – pijesz 1 kieliszek.",
     penalty: 1,
   },
   {
@@ -16,7 +18,7 @@ export const normalTasks = [
     penalty: 1,
   },
   {
-    text: "Z opaską na oczach ktoś podaje ci do ręki trzy dziwne przedmioty z pokoju. Musisz zgadnąć, co to jest. Za każdą nieudaną próbę pijesz 1 kieliszek.",
+    text: "Z opaską na oczach {target} podaje ci do ręki trzy dziwne przedmioty z pokoju. Musisz zgadnąć, co to jest. Za każdą nieudaną próbę pijesz 1 kieliszek.",
     penalty: 1,
   },
   {
@@ -40,10 +42,6 @@ export const normalTasks = [
     penalty: 1,
   },
   {
-    text: "Zrób osobie po prawej bardzo niezręczny, długi przytulas (10 sekund), jeśli obie strony się zgadzają. Jeśli odmówisz – pijesz 1 kieliszek.",
-    penalty: 1,
-  },
-  {
     text: "Wykonaj dramatyczny taniec uwielbienia wokół osoby po lewej – bez dotykania jej.",
     penalty: 1,
   },
@@ -60,19 +58,19 @@ export const normalTasks = [
     penalty: 1,
   },
   {
-    text: "zakrec butelka i przeliz sie z trafiona osoba kara 2 kieliszki",
+    text: "Przeliz sie z {target} kara 2 kieliszki",
     penalty: 2,
   },
   {
-    text: "zakrec butelka i zatancz erotyczny taniec na trafionej osobie kara 2 kieliszki",
+    text: "Zatancz erotyczny taniec na {target} kara 2 kieliszki",
     penalty: 2,
   },
   {
-    text: "„przeliz sie z osoba ktora najkrocej znasz kara 2 kieliszki”",
+    text: "przeliz sie z osoba ktora najkrocej znasz kara 2 kieliszki",
     penalty: 2,
   },
 ];
-export const hardTasks = [
+export const hardTasks: Question[] = [
   {
     text: "Pokaż grupie 10 ostatnich zdjęć z galerii w telefonie (bez czasu na kasowanie).",
     penalty: 2,
@@ -102,7 +100,7 @@ export const hardTasks = [
     penalty: 2,
   },
   {
-    text: "Pozwól komuś napisać z twojego telefonu wiadomość „Tęsknisz za mną?” do kogoś wybranego przez ciebie.",
+    text: "Pozwól {target} napisać z twojego telefonu wiadomość „Tęsknisz za mną?” do kogoś wybranego przez ciebie.",
     penalty: 2,
   },
   {
@@ -110,15 +108,15 @@ export const hardTasks = [
     penalty: 2,
   },
   {
-    text: "Zakręć butelką: na kogo wypadnie, musi powiedzieć ci szczerze, jaką masz największą wadę na imprezach. Przy odmowie – ta osoba pije 2 kieliszki.",
+    text: "{target}, musi powiedzieć ci szczerze, jaką masz największą wadę na imprezach. Przy odmowie – ta osoba pije 2 kieliszki.",
     penalty: 2,
   },
   {
-    text: "Zakręć butelką: musisz opowiedzieć historię związaną z osobą trafioną, w której wyszedłeś/wyszłaś na totalnego idiotę.",
+    text: "Musisz opowiedzieć historię związaną z {target}, w której wyszedłeś/wyszłaś na totalnego idiotę.",
     penalty: 2,
   },
   {
-    text: "Zakręć butelką: wylosowana osoba wymyśla ci zadanie z kategorii łagodny cringe (bez fizycznego kontaktu). Musisz je zrobić.",
+    text: "{target} wymyśla ci zadanie z kategorii łagodny cringe (bez fizycznego kontaktu). Musisz je zrobić.",
     penalty: 2,
   },
   {
@@ -322,7 +320,7 @@ export const hardTasks = [
     penalty: 2,
   },
 ];
-export const hardcoreTasks = [
+export const hardcoreTasks: Question[] = [
   {
     text: "Otwórz komunikator (Messenger, WhatsApp itp.) i pokaż nazwy 5 ostatnich konwersacji. Grupa wybiera jedną, z której na głos czytasz 5 ostatnich wiadomości (bez imion).",
     penalty: 3,

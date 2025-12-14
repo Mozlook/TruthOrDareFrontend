@@ -1,4 +1,4 @@
-import type { GameMode } from "../models/models";
+import type { GameMode } from "../../models/models";
 
 type Props = {
   gameMode: GameMode;

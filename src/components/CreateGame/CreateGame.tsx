@@ -1,4 +1,8 @@
-import type { GameMode, GameState, QuestionsPackage } from "../models/models";
+import type {
+  GameMode,
+  GameState,
+  QuestionsPackage,
+} from "../../models/models";
 import GameModePicker from "./GameModePicker";
 import PartyCreator from "./PartyCreator";
 import QuestionsPackagePicker from "./QuestionsPackagePicker";

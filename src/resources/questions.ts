@@ -1,4 +1,6 @@
-export const normalQuestions = [
+import type { Question } from "../models/models";
+
+export const normalQuestions: Question[] = [
   {
     text: "Jakie jest twoje najbardziej wstydliwe wspomnienie z imprezy?",
     penalty: 1,
@@ -96,7 +98,7 @@ export const normalQuestions = [
     penalty: 1,
   },
 ];
-export const hardQuestions = [
+export const hardQuestions: Question[] = [
   {
     text: "Kto przy tym stole najbardziej cię pociąga i dlaczego?",
     penalty: 2,
@@ -314,7 +316,7 @@ export const hardQuestions = [
     penalty: 2,
   },
 ];
-export const hardcoreQuestions = [
+export const hardcoreQuestions: Question[] = [
   {
     text: "Z kim z obecnych nikomu byś się nie pochwalił(a), że coś między wami było, ale mógłbyś/mogłabyś to rozważyć?",
     penalty: 3,

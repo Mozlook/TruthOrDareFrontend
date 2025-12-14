@@ -1,6 +1,7 @@
 import { useState } from "react";
-import CreateGame from "./components/CreateGame";
+import CreateGame from "./components/CreateGame/CreateGame";
 import type { GameState, GameMode, QuestionsPackage } from "./models/models";
+import DisplayQuestion from "./components/DisplayQuestion/DisplayQuestion";
 
 function App() {
   const [gameState, setGameState] = useState<GameState>("menu");
@@ -22,6 +23,13 @@ function App() {
           setQuestionsPackage={setQuestionPackage}
           party={party}
           setParty={setParty}
+        />
+      )}
+      {gameState === "game" && (
+        <DisplayQuestion
+          gameMode={gameMode}
+          party={party}
+          questionPackage={questionPackage}
         />
       )}
     </div>
