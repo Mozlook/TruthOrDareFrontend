@@ -39,9 +39,37 @@ const DisplayQuestion: React.FC<Props> = ({
   function DrawQuestion() {
     if (!questions.length) return;
 
+    let nextActiveIndex = activePlayer;
+
+    if (party.length > 0) {
+      nextActiveIndex = (activePlayer + 1) % party.length;
+      setActivePlayer(nextActiveIndex);
+    }
+
     const randomIndex = Math.floor(Math.random() * questions.length);
-    setQuestion(questions[randomIndex]);
-    setActivePlayer((prev) => (prev + 1) % party.length);
+    const rawQuestion = questions[randomIndex];
+
+    let text = rawQuestion.text;
+
+    if (party.length > 1 && text.includes("{target}")) {
+      const candidateIndexes = party
+        .map((_, idx) => idx)
+        .filter((idx) => idx !== nextActiveIndex);
+
+      const randomTargetIndex =
+        candidateIndexes[Math.floor(Math.random() * candidateIndexes.length)];
+
+      const targetName = party[randomTargetIndex];
+
+      text = text.replaceAll("{target}", targetName);
+    } else if (party.length === 0) {
+      text = text.replaceAll("{target}", "losowa osoba");
+    }
+
+    setQuestion({
+      ...rawQuestion,
+      text,
+    });
   }
 
   useEffect(() => {
