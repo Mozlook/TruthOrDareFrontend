@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type {
   GameMode,
   GameState,
@@ -26,8 +27,17 @@ const CreateGame: React.FC<Props> = ({
   setQuestionsPackage,
   setParty,
 }) => {
+  const [noQuestions, setNoQuestions] = useState<boolean>(false);
   function StartGame() {
-    setGameState("game");
+    if (
+      questionsPackge.normal !== false ||
+      questionsPackge.hard !== false ||
+      questionsPackge.hardcore !== false
+    ) {
+      setGameState("game");
+    } else {
+      setNoQuestions(true);
+    }
   }
 
   return (
@@ -66,9 +76,14 @@ const CreateGame: React.FC<Props> = ({
         <QuestionsPackagePicker
           questionsPackage={questionsPackge}
           setQuestionPackage={setQuestionsPackage}
+          setNoQuestions={setNoQuestions}
         />
       </div>
-
+      <div className="flex justify-center">
+        {noQuestions && (
+          <p className="text-red-600 font-semibold">Wybierz zestaw pytań!!!</p>
+        )}
+      </div>
       <button
         type="button"
         onClick={StartGame}

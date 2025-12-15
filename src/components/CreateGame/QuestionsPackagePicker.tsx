@@ -3,11 +3,13 @@ import type { QuestionsPackage } from "../../models/models";
 type Props = {
   questionsPackage: QuestionsPackage;
   setQuestionPackage: React.Dispatch<React.SetStateAction<QuestionsPackage>>;
+  setNoQuestions: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const QuestionsPackagePicker: React.FC<Props> = ({
   questionsPackage,
   setQuestionPackage,
+  setNoQuestions,
 }) => {
   return (
     <div className="space-y-2">
@@ -16,12 +18,13 @@ const QuestionsPackagePicker: React.FC<Props> = ({
         <input
           type="checkbox"
           checked={questionsPackage.normal}
-          onChange={(e) =>
+          onChange={(e) => {
             setQuestionPackage((prev) => ({
               ...prev,
               normal: e.target.checked,
-            }))
-          }
+            }));
+            setNoQuestions(false);
+          }}
           className="h-5 w-5 accent-red-500"
         />
       </label>
@@ -31,12 +34,13 @@ const QuestionsPackagePicker: React.FC<Props> = ({
         <input
           type="checkbox"
           checked={questionsPackage.hard}
-          onChange={(e) =>
+          onChange={(e) => {
             setQuestionPackage((prev) => ({
               ...prev,
               hard: e.target.checked,
-            }))
-          }
+            }));
+            setNoQuestions(false);
+          }}
           className="h-5 w-5 accent-red-500"
         />
       </label>
@@ -46,12 +50,13 @@ const QuestionsPackagePicker: React.FC<Props> = ({
         <input
           type="checkbox"
           checked={questionsPackage.hardcore}
-          onChange={(e) =>
+          onChange={(e) => {
             setQuestionPackage((prev) => ({
               ...prev,
               hardcore: e.target.checked,
-            }))
-          }
+            }));
+            setNoQuestions(false);
+          }}
           className="h-5 w-5 accent-red-500"
         />
       </label>
