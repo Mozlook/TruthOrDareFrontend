@@ -5,7 +5,6 @@ type Props = {
   activePlayer: number;
   gameMode: GameMode;
   question: Question;
-  DrawQuestion: () => void;
 };
 
 const QuestionCard: React.FC<Props> = ({
@@ -13,7 +12,6 @@ const QuestionCard: React.FC<Props> = ({
   activePlayer,
   gameMode,
   question,
-  DrawQuestion,
 }) => {
   return (
     <div className="flex flex-col gap-6">
@@ -40,14 +38,6 @@ const QuestionCard: React.FC<Props> = ({
           Kara: {question.penalty} shoty
         </p>
       )}
-
-      <button
-        type="button"
-        onClick={DrawQuestion}
-        className="mt-2 w-full rounded-2xl border border-red-500 bg-gradient-to-r from-red-600 to-red-500 py-3 text-base font-semibold tracking-wide text-white shadow-lg shadow-red-900/40 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-      >
-        Następne pytanie
-      </button>
     </div>
   );
 };

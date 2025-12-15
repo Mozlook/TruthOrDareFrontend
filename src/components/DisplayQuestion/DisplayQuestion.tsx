@@ -71,6 +71,34 @@ const DisplayQuestion: React.FC<Props> = ({
       text,
     });
   }
+  function SkipQuestion() {
+    if (!questions.length) return;
+
+    const randomIndex = Math.floor(Math.random() * questions.length);
+    const rawQuestion = questions[randomIndex];
+
+    let text = rawQuestion.text;
+
+    if (party.length > 1 && text.includes("{target}")) {
+      const candidateIndexes = party
+        .map((_, idx) => idx)
+        .filter((idx) => idx !== activePlayer);
+
+      const randomTargetIndex =
+        candidateIndexes[Math.floor(Math.random() * candidateIndexes.length)];
+
+      const targetName = party[randomTargetIndex];
+
+      text = text.replaceAll("{target}", targetName);
+    } else if (party.length === 0) {
+      text = text.replaceAll("{target}", "losowa osoba");
+    }
+
+    setQuestion({
+      ...rawQuestion,
+      text,
+    });
+  }
 
   useEffect(() => {
     DrawQuestion();
@@ -83,8 +111,21 @@ const DisplayQuestion: React.FC<Props> = ({
         activePlayer={activePlayer}
         gameMode={gameMode}
         question={question}
-        DrawQuestion={DrawQuestion}
       />
+      <button
+        type="button"
+        onClick={DrawQuestion}
+        className="mt-2 w-full rounded-2xl border border-red-500 bg-gradient-to-r from-red-600 to-red-500 py-3 text-base font-semibold tracking-wide text-white shadow-lg shadow-red-900/40 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+      >
+        Następne pytanie
+      </button>
+      <button
+        type="button"
+        onClick={SkipQuestion}
+        className="mt-2 w-full rounded-2xl border border-red-500 bg-gradient-to-r from-red-600 to-red-500 py-3 text-base font-semibold tracking-wide text-white shadow-lg shadow-red-900/40 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+      >
+        Pomiń pytanie
+      </button>
     </section>
   );
 };
