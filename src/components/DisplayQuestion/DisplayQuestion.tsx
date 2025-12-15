@@ -1,5 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
-import type { GameMode, Question, QuestionsPackage } from "../../models/models";
+import type {
+  GameMode,
+  Question,
+  QuestionsPackage,
+  Scoreboard,
+} from "../../models/models";
 import * as Questions from "../../resources/questions";
 import * as Tasks from "../../resources/tasks";
 import QuestionCard from "./QuestionCard";
@@ -8,12 +13,16 @@ type Props = {
   gameMode: GameMode;
   party: string[];
   questionPackage: QuestionsPackage;
+  scoreboard: Scoreboard;
+  setScoreboard: React.Dispatch<React.SetStateAction<Scoreboard>>;
 };
 
 const DisplayQuestion: React.FC<Props> = ({
   gameMode,
   party,
   questionPackage,
+  scoreboard,
+  setScoreboard,
 }) => {
   const [activePlayer, setActivePlayer] = useState<number>(
     Math.floor(Math.random() * party.length),
@@ -71,6 +80,7 @@ const DisplayQuestion: React.FC<Props> = ({
       text,
     });
   }
+
   function SkipQuestion() {
     if (!questions.length) return;
 
@@ -100,6 +110,27 @@ const DisplayQuestion: React.FC<Props> = ({
     });
   }
 
+  function ScoreUp() {
+    setScoreboard(
+      scoreboard.map((record, i) => {
+        if (i === activePlayer) {
+          return { ...record, score: record.score + 1 };
+        } else return record;
+      }),
+    );
+    DrawQuestion();
+  }
+  function DrinkUp() {
+    setScoreboard(
+      scoreboard.map((record, i) => {
+        if (i === activePlayer) {
+          return { ...record, shots: record.shots + question.penalty };
+        } else return record;
+      }),
+    );
+    DrawQuestion();
+  }
+
   useEffect(() => {
     DrawQuestion();
   }, [questions.length]);
@@ -112,20 +143,32 @@ const DisplayQuestion: React.FC<Props> = ({
         gameMode={gameMode}
         question={question}
       />
-      <button
-        type="button"
-        onClick={DrawQuestion}
-        className="mt-2 w-full rounded-2xl border border-red-500 bg-gradient-to-r from-red-600 to-red-500 py-3 text-base font-semibold tracking-wide text-white shadow-lg shadow-red-900/40 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-      >
-        Następne pytanie
-      </button>
-      <button
-        type="button"
-        onClick={SkipQuestion}
-        className="mt-2 w-full rounded-2xl border border-red-500 bg-gradient-to-r from-red-600 to-red-500 py-3 text-base font-semibold tracking-wide text-white shadow-lg shadow-red-900/40 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-      >
-        Pomiń pytanie
-      </button>
+      <div className="mt-4 space-y-2">
+        <button
+          type="button"
+          onClick={ScoreUp}
+          className="w-full rounded-2xl border border-red-500 bg-gradient-to-r from-red-600 to-red-500 py-3 text-base font-semibold tracking-wide text-white shadow-lg shadow-red-900/40 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        >
+          Zaliczone
+        </button>
+
+        <button
+          type="button"
+          onClick={DrinkUp}
+          className="w-full rounded-2xl border border-red-500/80 bg-zinc-950/80 py-3 text-base font-semibold tracking-wide text-red-200 shadow-md shadow-black/40 hover:bg-zinc-900 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        >
+          Pije!
+        </button>
+        {gameMode === "party" && (
+          <button
+            type="button"
+            onClick={SkipQuestion}
+            className="w-full rounded-2xl border border-zinc-600 bg-transparent py-2.5 text-sm font-medium tracking-wide text-zinc-200 hover:bg-zinc-900/60 hover:border-zinc-500 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+          >
+            Wymień pytanie
+          </button>
+        )}
+      </div>
     </section>
   );
 };

@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type {
   GameMode,
   GameState,
   QuestionsPackage,
+  Scoreboard,
+  ScoreEntry,
 } from "../../models/models";
 import GameModePicker from "./GameModePicker";
 import PartyCreator from "./PartyCreator";
@@ -16,6 +18,7 @@ type Props = {
   setGameMode: React.Dispatch<React.SetStateAction<GameMode>>;
   setQuestionsPackage: React.Dispatch<React.SetStateAction<QuestionsPackage>>;
   setParty: React.Dispatch<React.SetStateAction<string[]>>;
+  setScoreboard: React.Dispatch<React.SetStateAction<Scoreboard>>;
 };
 
 const CreateGame: React.FC<Props> = ({
@@ -26,6 +29,7 @@ const CreateGame: React.FC<Props> = ({
   setGameMode,
   setQuestionsPackage,
   setParty,
+  setScoreboard,
 }) => {
   const [noQuestions, setNoQuestions] = useState<boolean>(false);
   function StartGame() {
@@ -39,6 +43,14 @@ const CreateGame: React.FC<Props> = ({
       setNoQuestions(true);
     }
   }
+
+  useEffect(() => {
+    const newScoreboard = party.map((player) => {
+      const entry: ScoreEntry = { player: player, score: 0, shots: 0 };
+      return entry;
+    });
+    setScoreboard(newScoreboard);
+  }, [party]);
 
   return (
     <section className="rounded-3xl bg-black/80 border border-red-700/60 shadow-[0_0_30px_rgba(239,68,68,0.35)] backdrop-blur-sm px-5 py-6 sm:px-6 sm:py-7 space-y-6">

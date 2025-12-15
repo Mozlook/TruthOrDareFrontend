@@ -11,4 +11,12 @@ export type Question = {
 
 export type GameMode = "normal" | "party";
 
-export type GameState = "menu" | "game";
+export type GameState = "menu" | "game" | "scoreboard";
+
+export type ScoreEntry = {
+  player: string;
+  score: number;
+  shots: number;
+};
+
+export type Scoreboard = ScoreEntry[];
