@@ -14,18 +14,35 @@ const PartyCreator: React.FC<Props> = ({ party, setParty }) => {
     setPlayer("");
   }
 
+  function RemoveFromParty(idx: number) {
+    const filteredParty = party.filter((_, i) => {
+      return idx !== i;
+    });
+    setParty(filteredParty);
+  }
+
   return (
     <div className="space-y-3">
       {party.length > 0 && (
-        <div className="flex flex-wrap gap-2">
-          {party.map((member) => (
-            <span
-              key={member}
-              className="rounded-full border border-zinc-700 bg-zinc-900/80 px-3 py-1 text-xs text-zinc-100"
-            >
-              {member}
-            </span>
-          ))}
+        <div className="flex flex-col flex-wrap gap-2">
+          {party.length > 0 && (
+            <div className="flex flex-col flex-wrap gap-2">
+              {party.map((member, idx) => (
+                <div className="flex items-center justify-between" key={idx}>
+                  <span className="rounded-full border border-zinc-700 bg-zinc-900/80 px-4 py-1.5 text-sm text-zinc-100">
+                    {member}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => RemoveFromParty(idx)}
+                    className="ml-3 self-center rounded-full border border-red-500/70 bg-red-600/90 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-white shadow-sm shadow-red-900/40 hover:bg-red-500 active:scale-95 transition"
+                  >
+                    usuń
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
