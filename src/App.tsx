@@ -12,26 +12,30 @@ function App() {
     hardcore: false,
   });
   const [party, setParty] = useState<string[]>([]);
+
   return (
-    <div className="flex justify-center min-h-screen ">
-      {gameState === "menu" && (
-        <CreateGame
-          setGameState={setGameState}
-          gameMode={gameMode}
-          setGameMode={setGameMode}
-          questionsPackge={questionPackage}
-          setQuestionsPackage={setQuestionPackage}
-          party={party}
-          setParty={setParty}
-        />
-      )}
-      {gameState === "game" && (
-        <DisplayQuestion
-          gameMode={gameMode}
-          party={party}
-          questionPackage={questionPackage}
-        />
-      )}
+    <div className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-red-950 text-zinc-50 flex items-center justify-center px-4 py-6">
+      <div className="w-full max-w-md">
+        {gameState === "menu" && (
+          <CreateGame
+            setGameState={setGameState}
+            gameMode={gameMode}
+            setGameMode={setGameMode}
+            questionsPackge={questionPackage}
+            setQuestionsPackage={setQuestionPackage}
+            party={party}
+            setParty={setParty}
+          />
+        )}
+
+        {gameState === "game" && (
+          <DisplayQuestion
+            gameMode={gameMode}
+            party={party}
+            questionPackage={questionPackage}
+          />
+        )}
+      </div>
     </div>
   );
 }

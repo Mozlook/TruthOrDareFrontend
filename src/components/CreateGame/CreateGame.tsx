@@ -16,6 +16,7 @@ type Props = {
   setQuestionsPackage: React.Dispatch<React.SetStateAction<QuestionsPackage>>;
   setParty: React.Dispatch<React.SetStateAction<string[]>>;
 };
+
 const CreateGame: React.FC<Props> = ({
   gameMode,
   questionsPackge,
@@ -28,25 +29,55 @@ const CreateGame: React.FC<Props> = ({
   function StartGame() {
     setGameState("game");
   }
+
   return (
-    <div className="border-black border-4 flex flex-col items-center">
-      Ustawienia Gry
-      <GameModePicker
-        gameMode={gameMode}
-        setGameMode={setGameMode}
-        setParty={setParty}
-      />
+    <section className="rounded-3xl bg-black/80 border border-red-700/60 shadow-[0_0_30px_rgba(239,68,68,0.35)] backdrop-blur-sm px-5 py-6 sm:px-6 sm:py-7 space-y-6">
+      <header className="text-center space-y-1">
+        <p className="text-[11px] uppercase tracking-[0.35em] text-red-400/80">
+          Nie masz psychy
+        </p>
+        <h1 className="text-2xl font-semibold text-zinc-50">Ustawienia gry</h1>
+      </header>
+
+      <div className="space-y-3">
+        <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400">
+          Tryb gry
+        </h2>
+        <GameModePicker
+          gameMode={gameMode}
+          setGameMode={setGameMode}
+          setParty={setParty}
+        />
+      </div>
+
       {gameMode === "party" && (
-        <PartyCreator party={party} setParty={setParty} />
+        <div className="space-y-3">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400">
+            Gracze
+          </h2>
+          <PartyCreator party={party} setParty={setParty} />
+        </div>
       )}
-      <QuestionsPackagePicker
-        questionsPackage={questionsPackge}
-        setQuestionPackage={setQuestionsPackage}
-      />
-      <button type="button" onClick={StartGame} className="border-1">
+
+      <div className="space-y-3">
+        <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400">
+          Pakiety pytań
+        </h2>
+        <QuestionsPackagePicker
+          questionsPackage={questionsPackge}
+          setQuestionPackage={setQuestionsPackage}
+        />
+      </div>
+
+      <button
+        type="button"
+        onClick={StartGame}
+        className="mt-2 w-full rounded-2xl border border-red-500 bg-gradient-to-r from-red-600 to-red-500 py-3.5 text-base font-semibold tracking-wide text-white shadow-lg shadow-red-900/40 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+      >
         Start
       </button>
-    </div>
+    </section>
   );
 };
+
 export default CreateGame;

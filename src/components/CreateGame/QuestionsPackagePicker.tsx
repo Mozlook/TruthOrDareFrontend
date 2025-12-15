@@ -10,8 +10,9 @@ const QuestionsPackagePicker: React.FC<Props> = ({
   setQuestionPackage,
 }) => {
   return (
-    <div className="flex flex-col gap-2 border-1">
-      <label className="flex items-center gap-2">
+    <div className="space-y-2">
+      <label className="flex items-center justify-between gap-3 rounded-2xl border border-zinc-700 bg-zinc-900/70 px-4 py-3 text-sm text-zinc-100">
+        <span>Zwykłe</span>
         <input
           type="checkbox"
           checked={questionsPackage.normal}
@@ -21,11 +22,12 @@ const QuestionsPackagePicker: React.FC<Props> = ({
               normal: e.target.checked,
             }))
           }
+          className="h-5 w-5 accent-red-500"
         />
-        <span>Zwykłe</span>
       </label>
 
-      <label className="flex items-center gap-2">
+      <label className="flex items-center justify-between gap-3 rounded-2xl border border-zinc-700 bg-zinc-900/70 px-4 py-3 text-sm text-zinc-100">
+        <span>Mocniejsze</span>
         <input
           type="checkbox"
           checked={questionsPackage.hard}
@@ -35,11 +37,12 @@ const QuestionsPackagePicker: React.FC<Props> = ({
               hard: e.target.checked,
             }))
           }
+          className="h-5 w-5 accent-red-500"
         />
-        <span>Mocne</span>
       </label>
 
-      <label className="flex items-center gap-2">
+      <label className="flex items-center justify-between gap-3 rounded-2xl border border-red-600/70 bg-red-950/60 px-4 py-3 text-sm text-zinc-100 shadow-inner shadow-red-900/50">
+        <span>Szczerze? Mega mocne</span>
         <input
           type="checkbox"
           checked={questionsPackage.hardcore}
@@ -49,8 +52,8 @@ const QuestionsPackagePicker: React.FC<Props> = ({
               hardcore: e.target.checked,
             }))
           }
+          className="h-5 w-5 accent-red-500"
         />
-        <span>Szczerze? Mega Mocne</span>
       </label>
     </div>
   );

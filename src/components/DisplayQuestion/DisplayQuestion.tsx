@@ -9,12 +9,17 @@ type Props = {
   party: string[];
   questionPackage: QuestionsPackage;
 };
+
 const DisplayQuestion: React.FC<Props> = ({
   gameMode,
   party,
   questionPackage,
 }) => {
+  const [activePlayer, setActivePlayer] = useState<number>(
+    Math.floor(Math.random() * party.length),
+  );
   const [question, setQuestion] = useState<Question>({ text: "", penalty: 0 });
+
   const questions = useMemo(() => {
     let q: Question[] = [];
 
@@ -29,28 +34,13 @@ const DisplayQuestion: React.FC<Props> = ({
     }
 
     return q;
-  }, [questionPackage.normal, questionPackage.hard, questionPackage.hardcore]);
+  }, [questionPackage]);
 
   function DrawQuestion() {
-    if (!questions.length) {
-      console.log("empty question array");
-      return;
-    }
+    if (!questions.length) return;
 
-    const index = Math.floor(Math.random() * questions.length);
-    const baseQuestion = questions[index];
-
-    const target =
-      gameMode === "party" && party.length > 0
-        ? party[Math.floor(Math.random() * party.length)]
-        : "losowa osoba";
-
-    const textWithTarget = baseQuestion.text.replaceAll("{target}", target);
-
-    setQuestion({
-      ...baseQuestion,
-      text: textWithTarget,
-    });
+    const randomIndex = Math.floor(Math.random() * questions.length);
+    setQuestion(questions[randomIndex]);
   }
 
   useEffect(() => {
@@ -58,14 +48,16 @@ const DisplayQuestion: React.FC<Props> = ({
   }, [questions.length]);
 
   return (
-    <div className="flex flex-col border-1">
+    <section className="rounded-3xl bg-black/80 border border-red-700/60 shadow-[0_0_30px_rgba(239,68,68,0.35)] backdrop-blur-sm px-5 py-6 sm:px-6 sm:py-7">
       <QuestionCard
         party={party}
+        activePlayer={activePlayer}
         gameMode={gameMode}
         question={question}
         DrawQuestion={DrawQuestion}
       />
-    </div>
+    </section>
   );
 };
+
 export default DisplayQuestion;
