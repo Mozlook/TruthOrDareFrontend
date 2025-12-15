@@ -41,6 +41,7 @@ const DisplayQuestion: React.FC<Props> = ({
 
     const randomIndex = Math.floor(Math.random() * questions.length);
     setQuestion(questions[randomIndex]);
+    setActivePlayer((prev) => (prev + 1) % party.length);
   }
 
   useEffect(() => {
