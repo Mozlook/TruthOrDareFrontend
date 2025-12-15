@@ -4,6 +4,7 @@ import type {
   Question,
   QuestionsPackage,
   Scoreboard,
+  GameState,
 } from "../../models/models";
 import * as Questions from "../../resources/questions";
 import * as Tasks from "../../resources/tasks";
@@ -14,6 +15,7 @@ type Props = {
   party: string[];
   questionPackage: QuestionsPackage;
   scoreboard: Scoreboard;
+  setGameState: React.Dispatch<React.SetStateAction<GameState>>;
   setScoreboard: React.Dispatch<React.SetStateAction<Scoreboard>>;
 };
 
@@ -23,6 +25,7 @@ const DisplayQuestion: React.FC<Props> = ({
   questionPackage,
   scoreboard,
   setScoreboard,
+  setGameState,
 }) => {
   const [activePlayer, setActivePlayer] = useState<number>(
     Math.floor(Math.random() * party.length),
@@ -131,6 +134,9 @@ const DisplayQuestion: React.FC<Props> = ({
     DrawQuestion();
   }
 
+  function FinishGame() {
+    setGameState("scoreboard");
+  }
   useEffect(() => {
     DrawQuestion();
   }, [questions.length]);
@@ -159,15 +165,26 @@ const DisplayQuestion: React.FC<Props> = ({
         >
           Pije!
         </button>
-        {gameMode === "party" && (
+
+        <div className="flex gap-2 pt-1">
+          {gameMode === "party" && (
+            <button
+              type="button"
+              onClick={SkipQuestion}
+              className="flex-1 rounded-2xl border border-zinc-600 bg-transparent py-2.5 text-sm font-medium tracking-wide text-zinc-200 hover:bg-zinc-900/60 hover:border-zinc-500 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            >
+              Wymień
+            </button>
+          )}
+
           <button
             type="button"
-            onClick={SkipQuestion}
-            className="w-full rounded-2xl border border-zinc-600 bg-transparent py-2.5 text-sm font-medium tracking-wide text-zinc-200 hover:bg-zinc-900/60 hover:border-zinc-500 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            onClick={FinishGame}
+            className="flex-1 rounded-2xl border border-red-500/60 bg-transparent py-2.5 text-sm font-medium tracking-wide text-red-300 hover:bg-red-950/40 hover:border-red-400 transition-transform active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
           >
-            Wymień pytanie
+            Zakończ grę
           </button>
-        )}
+        </div>
       </div>
     </section>
   );

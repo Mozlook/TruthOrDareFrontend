@@ -7,6 +7,7 @@ import {
   type Scoreboard,
 } from "./models/models";
 import DisplayQuestion from "./components/DisplayQuestion/DisplayQuestion";
+import ScoreboardComponent from "./components/Scoreboard/Scoreboard";
 function App() {
   const [gameState, setGameState] = useState<GameState>("menu");
   const [gameMode, setGameMode] = useState<GameMode>("normal");
@@ -37,6 +38,7 @@ function App() {
         {gameState === "game" && (
           <DisplayQuestion
             gameMode={gameMode}
+            setGameState={setGameState}
             party={party}
             questionPackage={questionPackage}
             scoreboard={scoreboard}
@@ -44,35 +46,11 @@ function App() {
           />
         )}
 
-        {/* PROSTY PODGLĄD SCOREBOARD – tylko na debug */}
-        {scoreboard.length > 0 && (
-          <div className="mt-6 rounded-2xl border border-zinc-700 bg-black/60 px-4 py-3 text-xs text-zinc-200">
-            <div className="mb-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-zinc-400">
-              Scoreboard (debug)
-            </div>
-            <ul className="space-y-1.5">
-              {scoreboard.map((entry, idx) => (
-                <li
-                  key={entry.player + idx}
-                  className="flex items-center justify-between"
-                >
-                  <span className="font-medium text-zinc-100">
-                    {entry.player}
-                  </span>
-                  <span className="flex gap-3">
-                    <span className="tabular-nums">
-                      score:{" "}
-                      <span className="font-semibold">{entry.score}</span>
-                    </span>
-                    <span className="tabular-nums">
-                      shots:{" "}
-                      <span className="font-semibold">{entry.shots}</span>
-                    </span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {gameState === "scoreboard" && (
+          <ScoreboardComponent
+            scoreboard={scoreboard}
+            setGameState={setGameState}
+          />
         )}
       </div>
     </div>
