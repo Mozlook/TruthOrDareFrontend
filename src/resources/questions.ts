@@ -2,6 +2,10 @@ import type { Question } from "../models/models";
 
 export const normalQuestions: Question[] = [
   {
+    text: "Kto z tego pokoju jako pierwszy wkurzyłby cię, gdybyście mieszkali razem, i czym.",
+    penalty: 1,
+  },
+  {
     text: "Jakie jest twoje najbardziej wstydliwe wspomnienie z imprezy?",
     penalty: 1,
   },
@@ -50,43 +54,11 @@ export const normalQuestions: Question[] = [
     penalty: 1,
   },
   {
-    text: "pokaz wszystkich 6 ostatnich zdjec z twojej galeri kara 1 kieliszek",
+    text: "Pokaz wszystkim 6 ostatnich zdjec z twojej galeri.",
     penalty: 1,
   },
   {
-    text: "zaslaniasz oczy opaska a 1 osoba dotyka cie w dowolne miejsce a ty musisz zgadnac kto to kara 1 kieliszek",
-    penalty: 1,
-  },
-  {
-    text: "Pokaż wszystkim swoje majtki lub bokserki.",
-    penalty: 1,
-  },
-  {
-    text: "Pocałuj stopę osoby po twojej prawej.",
-    penalty: 1,
-  },
-  {
-    text: "Dotknij języka osoby po twojej lewej.",
-    penalty: 1,
-  },
-  {
-    text: "Oblizuj nos osoby naprzeciwko.",
-    penalty: 1,
-  },
-  {
-    text: "Pokaż wszystkim swoje owłosienie pod pachami.",
-    penalty: 1,
-  },
-  {
-    text: "Przeliz się z butelką jak z partnerem.",
-    penalty: 1,
-  },
-  {
-    text: "Dotknij języka językiem osoby naprzeciwko.",
-    penalty: 1,
-  },
-  {
-    text: "Przyznaj się do liczby partnerów seksualnych.",
+    text: "Powiedz jaki masz bodycount.",
     penalty: 1,
   },
   {
@@ -94,7 +66,7 @@ export const normalQuestions: Question[] = [
     penalty: 1,
   },
   {
-    text: "Przyznaj się do liczby razy, gdy udawałeś/aś orgazm.",
+    text: "Ile razy udawałeś/aś orgazm.",
     penalty: 1,
   },
 ];
@@ -124,7 +96,7 @@ export const hardQuestions: Question[] = [
     penalty: 2,
   },
   {
-    text: "Jaka jest najdziwniejsza rzecz, która kiedykolwiek cię podjarała (bez zbyt mocnych szczegółów)?",
+    text: "Jaka jest najdziwniejsza rzecz, która kiedykolwiek cię podjarała?",
     penalty: 2,
   },
   {
@@ -160,7 +132,7 @@ export const hardQuestions: Question[] = [
     penalty: 2,
   },
   {
-    text: "Opisz swój najbardziej katastrofalny pocałunek (bez przesadnych szczegółów).",
+    text: "Opisz swój najbardziej katastrofalny pocałunek.",
     penalty: 2,
   },
   {
@@ -216,7 +188,7 @@ export const hardQuestions: Question[] = [
     penalty: 2,
   },
   {
-    text: "Jaki był twój najbardziej wstydliwy moment w łazience, pod prysznicem lub w toalecie, o którym komuś opowiedziałeś/opowiedziałaś?",
+    text: "Jaki był twój najbardziej wstydliwy moment w łazience, pod prysznicem lub w toalecie?",
     penalty: 2,
   },
   {
@@ -240,10 +212,6 @@ export const hardQuestions: Question[] = [
     penalty: 3,
   },
   {
-    text: "Pocałuj w usta osobę, którą uważasz za najmniej atrakcyjną w grupie.",
-    penalty: 2,
-  },
-  {
     text: "Przyznaj się do najdziwniejszego miejsca, gdzie uprawiałeś/aś seks.",
     penalty: 2,
   },
@@ -256,19 +224,11 @@ export const hardQuestions: Question[] = [
     penalty: 2,
   },
   {
-    text: "Pokaż wszystkim ostatnią pornograficzną stronę, którą odwiedziłeś/aś.",
-    penalty: 2,
-  },
-  {
-    text: "Przyznaj się do najdziwniejszego przedmiotu, którym się masturbowałeś/aś.",
+    text: "Jaki jest najdziewniejszy przedmiot, którym się masturbowałeś/aś.",
     penalty: 2,
   },
   {
     text: "Opowiedz o swoim najbardziej obrzydliwym pocałunku.",
-    penalty: 2,
-  },
-  {
-    text: "Pokaż wszystkim swoje sextingi z ostatniego miesiąca.",
     penalty: 2,
   },
   {
@@ -280,31 +240,19 @@ export const hardQuestions: Question[] = [
     penalty: 2,
   },
   {
-    text: "Przyznaj się do używania zabawek erotycznych w miejscach publicznych.",
+    text: "Czy używałe/łas zabawek erotycznych w miejscach publicznych.",
     penalty: 2,
   },
   {
-    text: "Przyznaj się do seksu z nieznajomym.",
+    text: "Czy uprawiałeś/łas kiedyś seks z nieznajomym.",
     penalty: 2,
   },
   {
-    text: "Opowiedz o najbardziej obrzydliwym pocałunek z językiem.",
-    penalty: 2,
-  },
-  {
-    text: "Przyznaj się do seksu grupowego doświadczeń.",
-    penalty: 2,
-  },
-  {
-    text: "Pokaż wszystkim swoje tatuaże intymne.",
+    text: "Opowiedz o najbardziej obrzydliwym pocałunku z językiem.",
     penalty: 2,
   },
   {
     text: "Opisz zapach swojego potu po seksie.",
-    penalty: 2,
-  },
-  {
-    text: "Pokaż wszystkim swoje owłosienie na plecach.",
     penalty: 2,
   },
   {
@@ -326,7 +274,7 @@ export const hardcoreQuestions: Question[] = [
     penalty: 3,
   },
   {
-    text: "Czy ktoś tutaj był bohaterem twojej fantazji? Powiedz kto (bez szczegółów).",
+    text: "Czy ktoś tutaj był bohaterem twojej fantazji? Powiedz kto.",
     penalty: 3,
   },
   {
@@ -334,7 +282,7 @@ export const hardcoreQuestions: Question[] = [
     penalty: 3,
   },
   {
-    text: "Czy kiedykolwiek żałowałeś/żałowałaś, że z kimś spałeś/spałaś lub poszedłeś/poszłaś na coś intymnego? (bez szczegółów)",
+    text: "Czy kiedykolwiek żałowałeś/żałowałaś, że z kimś spałeś/spałaś lub poszedłeś/poszłaś na coś intymnego?",
     penalty: 3,
   },
   {
@@ -346,7 +294,7 @@ export const hardcoreQuestions: Question[] = [
     penalty: 3,
   },
   {
-    text: "Czy kiedykolwiek ktoś przyłapał cię na robieniu czegoś bardzo prywatnego? Co to było (ogólnie)?",
+    text: "Czy kiedykolwiek ktoś przyłapał cię na robieniu czegoś bardzo prywatnego? Co to było?",
     penalty: 3,
   },
   {
@@ -454,11 +402,7 @@ export const hardcoreQuestions: Question[] = [
     penalty: 3,
   },
   {
-    text: "Przyznaj się do oglądania bestialskiej pornografii.",
-    penalty: 3,
-  },
-  {
-    text: "Opisz smak spermy lub wydzielin.",
+    text: "Przyznaj się do oglądania zwierzecej pornografii.",
     penalty: 3,
   },
   {

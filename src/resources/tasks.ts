@@ -2,6 +2,26 @@ import type { Question } from "../models/models";
 
 export const normalTasks: Question[] = [
   {
+    text: "Pokaż wszystkim swoje owłosienie na plecach.",
+    penalty: 2,
+  },
+  {
+    text: "Zaslaniasz oczy opaska a 1 osoba dotyka cie w dowolne miejsce a ty musisz zgadnac",
+    penalty: 1,
+  },
+  {
+    text: "Pokaż wszystkim swoje majtki lub bokserki.",
+    penalty: 1,
+  },
+  {
+    text: "Dotknij języka osoby po twojej lewej.",
+    penalty: 1,
+  },
+  {
+    text: "Pokaż wszystkim swoje owłosienie pod pachami.",
+    penalty: 1,
+  },
+  {
     text: "Pokaż ostatnie 3 osoby, którym dałeś/dałaś polubienie na Instagramie lub TikToku i powiedz, za co ich lubisz.",
     penalty: 1,
   },
@@ -10,7 +30,7 @@ export const normalTasks: Question[] = [
     penalty: 1,
   },
   {
-    text: "Razem z {target} robicie niezręczny, długi przytulas (10 sekund). Jeśli odmówisz – pijesz 1 kieliszek.",
+    text: "Razem z {target} robicie niezręczny, długi przytulas (10 sekund).",
     penalty: 1,
   },
   {
@@ -19,10 +39,6 @@ export const normalTasks: Question[] = [
   },
   {
     text: "Z opaską na oczach {target} podaje ci do ręki trzy dziwne przedmioty z pokoju. Musisz zgadnąć, co to jest. Za każdą nieudaną próbę pijesz 1 kieliszek.",
-    penalty: 1,
-  },
-  {
-    text: "Przyznaj, kto z tego pokoju jako pierwszy wkurzyłby cię, gdybyście mieszkali razem, i czym.",
     penalty: 1,
   },
   {
@@ -58,19 +74,36 @@ export const normalTasks: Question[] = [
     penalty: 1,
   },
   {
-    text: "Przeliz sie z {target} kara 2 kieliszki",
-    penalty: 2,
-  },
-  {
     text: "Zatancz erotyczny taniec na {target} kara 2 kieliszki",
-    penalty: 2,
-  },
-  {
-    text: "przeliz sie z osoba ktora najkrocej znasz kara 2 kieliszki",
     penalty: 2,
   },
 ];
 export const hardTasks: Question[] = [
+  {
+    text: "Pocałuj stopę osoby po twojej prawej.",
+    penalty: 1,
+  },
+  {
+    text: "Oblizuj nos osoby naprzeciwko.",
+    penalty: 1,
+  },
+  {
+    text: "Przeliz się z butelką jak z partnerem.",
+    penalty: 1,
+  },
+  {
+    text: "Dotknij języka językiem osoby naprzeciwko.",
+    penalty: 1,
+  },
+  {
+    text: "Pokaż wszystkim ostatnią pornograficzną stronę, którą odwiedziłeś/aś.",
+    penalty: 2,
+  },
+
+  {
+    text: "Jeśli jesteście u ciebie, pozwól grupie obejrzeć zawartość twojej lodówki i skomentować, co jest najbardziej obrzydliwe lub zastanawiające.",
+    penalty: 3,
+  },
   {
     text: "Pokaż grupie 10 ostatnich zdjęć z galerii w telefonie (bez czasu na kasowanie).",
     penalty: 2,
@@ -116,7 +149,7 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "{target} wymyśla ci zadanie z kategorii łagodny cringe (bez fizycznego kontaktu). Musisz je zrobić.",
+    text: "{target} wymyśla ci zadanie z (bez fizycznego kontaktu). Musisz je zrobić.",
     penalty: 2,
   },
   {
@@ -192,7 +225,7 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Zagraj scenkę żebrania o drugą szansę przed osobą, którą wybierze grupa.",
+    text: "Zagraj scenkę żebrania o drugą szansę przed {target} .",
     penalty: 2,
   },
   {
@@ -224,7 +257,7 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Stań na środku i powiedz: „Przyznaję, że jestem...” i wymień pięć rzeczy, które są o tobie trudne do przyjęcia.",
+    text: "Stań na środku i powiedz: „Przyznaję, że jestem...” i wymień trzy rzeczy, które są o tobie trudne do przyjęcia.",
     penalty: 2,
   },
   {
@@ -236,10 +269,6 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Przeliz się z osobą po twojej lewej stronie przez 10 sekund.",
-    penalty: 2,
-  },
-  {
     text: "Zrób erotyczny masaż {target} .",
     penalty: 2,
   },
@@ -248,11 +277,7 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Zakręć butelką i oblizuj palce trafionej osoby.",
-    penalty: 2,
-  },
-  {
-    text: "Przeliz się z językiem z osobą naprzeciwko.",
+    text: "Oblizuj palce {target} .",
     penalty: 2,
   },
   {
@@ -272,15 +297,7 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Przeliz się z osobą tej samej płci (jeśli jesteś hetero).",
-    penalty: 2,
-  },
-  {
-    text: "Dotknij się i jęknij głośno.",
-    penalty: 2,
-  },
-  {
-    text: "Zakręć butelką i powiedz trafionej osobie, co byś z nią zrobił/a seksualnie.",
+    text: "Powiedz {target} , co byś z nią zrobił/a seksualnie.",
     penalty: 2,
   },
   {
@@ -288,15 +305,11 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Zakręć butelką i zlizuj coś z ciała trafionej osoby.",
+    text: "Zliż coś z ciała {target} .",
     penalty: 2,
   },
   {
     text: "Zatańcz jak striptizerka/striptizer.",
-    penalty: 2,
-  },
-  {
-    text: "Przeliz się z osobą, którą znasz najdłużej.",
     penalty: 2,
   },
   {
@@ -308,21 +321,17 @@ export const hardTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Oblizuj uszy osoby po twojej prawej.",
+    text: "Zrób symulację seksu z poduszką.",
     penalty: 2,
   },
   {
-    text: "Zatańcz nago z rękami związanymi.",
-    penalty: 3,
-  },
-  {
-    text: "Zrób symulację seksu z poduszką.",
+    text: "Zrób malinke na szyji {target} .",
     penalty: 2,
   },
 ];
 export const hardcoreTasks: Question[] = [
   {
-    text: "Otwórz komunikator (Messenger, WhatsApp itp.) i pokaż nazwy 5 ostatnich konwersacji. Grupa wybiera jedną, z której na głos czytasz 5 ostatnich wiadomości (bez imion).",
+    text: "Otwórz Messenger i pokaż nazwy 5 ostatnich konwersacji. Grupa wybiera jedną, z której na głos czytasz 5 ostatnich wiadomości (bez imion).",
     penalty: 3,
   },
   {
@@ -330,7 +339,7 @@ export const hardcoreTasks: Question[] = [
     penalty: 3,
   },
   {
-    text: "Pozwól osobie po lewej zmienić ci tapetę w telefonie na coś kompromitującego (ale nie obraźliwego) na resztę imprezy.",
+    text: "Pozwól osobie po lewej zmienić ci tapetę w telefonie na coś kompromitującego na resztę imprezy.",
     penalty: 3,
   },
   {
@@ -338,11 +347,11 @@ export const hardcoreTasks: Question[] = [
     penalty: 3,
   },
   {
-    text: "Zakręć butelką: osoba trafiona wybiera u ciebie jedno zdjęcie z galerii (po krótkim przewijaniu), które pokazujesz wszystkim. Przy odmowie pijesz 3 kieliszki.",
+    text: " {target} wybiera u ciebie jedno zdjęcie z galerii (po krótkim przewijaniu), które pokazujesz wszystkim.",
     penalty: 3,
   },
   {
-    text: "Zakręć butelką: wylosowana osoba zadaje ci jedno naprawdę brutalnie szczere pytanie o relacje lub miłość.",
+    text: "Grupa zadaje ci jedno naprawdę brutalnie szczere pytanie o relacje lub miłość.",
     penalty: 3,
   },
   {
@@ -355,10 +364,6 @@ export const hardcoreTasks: Question[] = [
   },
   {
     text: "Wymień trzy rzeczy, które robisz sam(a) w domu, a byłyby turbo krępujące, gdyby ktoś to zobaczył.",
-    penalty: 3,
-  },
-  {
-    text: "Jeśli jesteście u ciebie, pozwól grupie obejrzeć zawartość twojej lodówki i skomentować, co jest najbardziej obrzydliwe lub zastanawiające.",
     penalty: 3,
   },
   {
@@ -398,19 +403,23 @@ export const hardcoreTasks: Question[] = [
     penalty: 2,
   },
   {
-    text: "Zdejmij bieliznę i pokaż grupie przez 10 sekund.",
+    text: "Zdejmij bieliznę i zostaw ja na stole do końca gry.",
     penalty: 3,
   },
   {
-    text: "Zakręć butelką i dotknij biustu lub krocza trafionej osoby.",
+    text: "Dotknij biustu lub krocza {target} .",
     penalty: 3,
   },
   {
-    text: "Zatańcz nago przez 10 sekund (lub w bieliźnie).",
+    text: "Zatańcz w bieliźnie przez 10 sekund.",
     penalty: 3,
   },
   {
-    text: "Zakręć butelką i zrób hickey trafionej osobie.",
+    text: "Idz z {target} do pokoju i rozbież sie do naga.",
+    penalty: 2,
+  },
+  {
+    text: "Zrób malinke {target} .",
     penalty: 3,
   },
   {
@@ -418,7 +427,7 @@ export const hardcoreTasks: Question[] = [
     penalty: 3,
   },
   {
-    text: "Zakręć butelką i symuluj seks z trafioną osobą przez 10 sekund.",
+    text: "Symuluj seks z {target} przez 10 sekund.",
     penalty: 3,
   },
   {
@@ -430,7 +439,7 @@ export const hardcoreTasks: Question[] = [
     penalty: 3,
   },
   {
-    text: "Zakręć butelką i powąchaj pachwinę trafionej osoby.",
+    text: "Powąchaj pachwinę {target} .",
     penalty: 3,
   },
   {
@@ -446,11 +455,7 @@ export const hardcoreTasks: Question[] = [
     penalty: 3,
   },
   {
-    text: "Zatańcz nago z butelką między nogami.",
-    penalty: 3,
-  },
-  {
-    text: "Oblizuj pachy osoby po twojej lewej.",
+    text: "Poliż pache osoby po twojej lewej.",
     penalty: 3,
   },
   {
@@ -474,19 +479,11 @@ export const hardcoreTasks: Question[] = [
     penalty: 3,
   },
   {
-    text: "Oblizuj stopy całej grupy.",
+    text: "Dotknij analnie {target} przez ubranie.",
     penalty: 3,
   },
   {
-    text: "Zakręć butelką i dotknij analnie trafionej osoby przez ubranie.",
-    penalty: 3,
-  },
-  {
-    text: "Oblizuj pachy całej grupy.",
-    penalty: 3,
-  },
-  {
-    text: "Zakręć butelką i zrób deep throat na palcu trafionej osoby.",
+    text: "Zrób deep throat na palcu {target} .",
     penalty: 3,
   },
   {
@@ -494,23 +491,11 @@ export const hardcoreTasks: Question[] = [
     penalty: 3,
   },
   {
-    text: "Dotknij się i opisz ощущения głośno.",
+    text: "Ugryź pośladek {target} .",
     penalty: 3,
   },
   {
-    text: "Zakręć butelką i ugryź pośladek trafionej osoby.",
-    penalty: 3,
-  },
-  {
-    text: "Przeliz się z trzema osobami naraz.",
-    penalty: 3,
-  },
-  {
-    text: "Dotknij krocza osoby naprzeciwko i zgadnij płeć.",
-    penalty: 3,
-  },
-  {
-    text: "Zakręć butelką i zlizuj pot z trafionej osoby.",
+    text: "Zliż pot z {target} .",
     penalty: 3,
   },
   {
@@ -518,11 +503,11 @@ export const hardcoreTasks: Question[] = [
     penalty: 3,
   },
   {
-    text: "Zakręć butelką i zrób golden shower symulację (bez naprawdę).",
+    text: "Zrób symulację golden shower od {target} .",
     penalty: 3,
   },
   {
-    text: "Zakręć butelką i ugryź sutek trafionej osoby przez ubranie.",
+    text: "Ugryź sutek {target} przez ubranie.",
     penalty: 3,
   },
   {
@@ -532,5 +517,45 @@ export const hardcoreTasks: Question[] = [
   {
     text: "Oblizuj palce u rąk całej grupy.",
     penalty: 3,
+  },
+  {
+    text: "Przeliz się z osobą, którą znasz najdłużej.",
+    penalty: 2,
+  },
+  {
+    text: "Dotknij się i jęknij głośno.",
+    penalty: 2,
+  },
+  {
+    text: "Przeliz się z osobą tej samej płci (jeśli jesteś hetero).",
+    penalty: 2,
+  },
+  {
+    text: "Przeliz się z językiem z osobą naprzeciwko.",
+    penalty: 2,
+  },
+  {
+    text: "Przeliz się z osobą po twojej lewej stronie przez 10 sekund.",
+    penalty: 2,
+  },
+  {
+    text: "Przeliz sie z osoba ktora najkrocej znasz kara 2 kieliszki",
+    penalty: 2,
+  },
+  {
+    text: "Przeliz sie z {target} kara 2 kieliszki",
+    penalty: 2,
+  },
+  {
+    text: "Pokaż wszystkim swoje tatuaże intymne.",
+    penalty: 2,
+  },
+  {
+    text: "Pokaż wszystkim swoje sextingi z ostatniego miesiąca.",
+    penalty: 2,
+  },
+  {
+    text: "Pocałuj w usta osobę, którą uważasz za najmniej atrakcyjną w grupie.",
+    penalty: 2,
   },
 ];
