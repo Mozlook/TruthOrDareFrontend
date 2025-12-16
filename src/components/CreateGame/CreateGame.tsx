@@ -31,16 +31,18 @@ const CreateGame: React.FC<Props> = ({
   setParty,
   setScoreboard,
 }) => {
-  const [noQuestions, setNoQuestions] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
   function StartGame() {
-    if (
+    if (gameMode === "party" && party.length === 0) {
+      setError("Ekipa nie moze być pusta!");
+    } else if (
       questionsPackge.normal !== false ||
       questionsPackge.hard !== false ||
       questionsPackge.hardcore !== false
     ) {
       setGameState("game");
     } else {
-      setNoQuestions(true);
+      setError("Wybierz zestaw pytań!!!!");
     }
   }
 
@@ -88,13 +90,11 @@ const CreateGame: React.FC<Props> = ({
         <QuestionsPackagePicker
           questionsPackage={questionsPackge}
           setQuestionPackage={setQuestionsPackage}
-          setNoQuestions={setNoQuestions}
+          setError={setError}
         />
       </div>
       <div className="flex justify-center">
-        {noQuestions && (
-          <p className="text-red-600 font-semibold">Wybierz zestaw pytań!!!</p>
-        )}
+        {error != "" && <p className="text-red-600 font-semibold">{error}</p>}
       </div>
       <button
         type="button"

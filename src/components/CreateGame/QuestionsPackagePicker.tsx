@@ -3,13 +3,13 @@ import type { QuestionsPackage } from "../../models/models";
 type Props = {
   questionsPackage: QuestionsPackage;
   setQuestionPackage: React.Dispatch<React.SetStateAction<QuestionsPackage>>;
-  setNoQuestions: React.Dispatch<React.SetStateAction<boolean>>;
+  setError: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const QuestionsPackagePicker: React.FC<Props> = ({
   questionsPackage,
   setQuestionPackage,
-  setNoQuestions,
+  setError,
 }) => {
   return (
     <div className="space-y-2">
@@ -23,7 +23,7 @@ const QuestionsPackagePicker: React.FC<Props> = ({
               ...prev,
               normal: e.target.checked,
             }));
-            setNoQuestions(false);
+            setError("");
           }}
           className="h-5 w-5 accent-red-500"
         />
@@ -39,7 +39,7 @@ const QuestionsPackagePicker: React.FC<Props> = ({
               ...prev,
               hard: e.target.checked,
             }));
-            setNoQuestions(false);
+            setError("");
           }}
           className="h-5 w-5 accent-red-500"
         />
@@ -55,7 +55,7 @@ const QuestionsPackagePicker: React.FC<Props> = ({
               ...prev,
               hardcore: e.target.checked,
             }));
-            setNoQuestions(false);
+            setError("");
           }}
           className="h-5 w-5 accent-red-500"
         />
