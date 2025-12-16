@@ -69,7 +69,61 @@ export const normalQuestions: Question[] = [
     text: "Ile razy udawałeś/aś orgazm.",
     penalty: 1,
   },
+  {
+    text: "Jaka jest najgorsza randka, na jakiej kiedykolwiek byłeś/byłaś?",
+    penalty: 1,
+  },
+  {
+    text: "Czy kiedykolwiek śpiewałeś/śpiewałaś pod prysznicem tak głośno, że ktoś cię usłyszał?",
+    penalty: 1,
+  },
+  {
+    text: "Jaki jest twój najbardziej żenujący nick z czasów nastoletnich?",
+    penalty: 1,
+  },
+  {
+    text: "Opowiedz o sytuacji, w której głośno puściłeś/puściłaś bąka w złym momencie.",
+    penalty: 1,
+  },
+  {
+    text: "Jaka piosenka z twojej playlisty najbardziej cię kompromituje?",
+    penalty: 1,
+  },
+  {
+    text: "Czy kiedykolwiek udawałeś/udawałaś, że znasz film lub książkę, której tak naprawdę nie znałeś/nie znałaś?",
+    penalty: 1,
+  },
+
+  {
+    text: "Jaka jest twoja najgorsza fryzura z przeszłości?",
+    penalty: 1,
+  },
+  {
+    text: "Jaki jest twój najbardziej wstydliwy zakup online?",
+    penalty: 1,
+  },
+  {
+    text: "Czy kiedykolwiek przyłapano cię na tańczeniu samotnie w pokoju?",
+    penalty: 1,
+  },
+  {
+    text: "Jaka jest najgłupsza rzecz, w jaką uwierzyłeś/uwierzyłaś jako dziecko?",
+    penalty: 1,
+  },
+  {
+    text: "Opowiedz o najbardziej żenującym prezencie, jaki kiedykolwiek dostałeś/dostałaś.",
+    penalty: 1,
+  },
+  {
+    text: "Czy kiedykolwiek płakałeś/płakałaś przy filmie lub serialu? Przy jakim?",
+    penalty: 1,
+  },
+  {
+    text: "Jaki jest twój najgorszy nawyk, którego się wstydzisz?",
+    penalty: 1,
+  },
 ];
+
 export const hardQuestions: Question[] = [
   {
     text: "Kto przy tym stole najbardziej cię pociąga i dlaczego?",
@@ -263,7 +317,88 @@ export const hardQuestions: Question[] = [
     text: "Pocałuj w usta osobę z najgorszym oddechem.",
     penalty: 2,
   },
+  {
+    text: "Jaka jest najgorsza rzecz, jaką powiedziałeś/powiedziałaś podczas seksu?",
+    penalty: 2,
+  },
+  {
+    text: "Czy kiedykolwiek miałeś/miałaś crusha na przyjacielu swojej byłej/byłego?",
+    penalty: 2,
+  },
+  {
+    text: "Opowiedz o sytuacji, w której ktoś cię odrzucił w najbardziej brutalny sposób.",
+    penalty: 2,
+  },
+  {
+    text: "Jaka kategoria porno jest twoją tajemną winą (guilty pleasure)?",
+    penalty: 2,
+  },
+  {
+    text: "Czy kiedykolwiek miałeś/miałaś 'przyjaciela z korzyściami', który tak naprawdę się w tobie zakochał?",
+    penalty: 2,
+  },
+  {
+    text: "Opisz swój najbardziej żenujący dźwięk podczas seksu.",
+    penalty: 2,
+  },
+  {
+    text: "Czy kiedykolwiek spałeś/spałaś z kimś tylko dlatego, że byłeś/byłaś pijany/a?",
+    penalty: 2,
+  },
+  {
+    text: "Jaka jest najgorsza rada miłosna, jaką kiedykolwiek dałeś/dałaś komuś?",
+    penalty: 2,
+  },
+  {
+    text: "Jaka jest najdziwniejsza pozycja seksualna, jaką wypróbowałeś/wypróbowałaś?",
+    penalty: 2,
+  },
+  {
+    text: "Czy kiedykolwiek miałeś/miałaś wet dream o kimś, kogo znasz osobiście?",
+    penalty: 2,
+  },
+  {
+    text: "Opowiedz o najbardziej żenującym momencie, gdy rodzice lub rodzina weszli w złym momencie.",
+    penalty: 2,
+  },
+  {
+    text: "Jaki jest twój najbardziej wstydliwy fetysz lub turn-on?",
+    penalty: 2,
+  },
+  {
+    text: "Czy kiedykolwiek porównywałeś/porównywałaś partnera do swojego exa w głowie podczas seksu?",
+    penalty: 2,
+  },
+  {
+    text: "Opisz sytuację, w której ktoś odkrył twoją historię porno.",
+    penalty: 2,
+  },
+  {
+    text: "Czy kiedykolwiek udawałeś/udawałaś zainteresowanie czyimiś hobby tylko po to, żeby się podobać?",
+    penalty: 2,
+  },
+  {
+    text: "Jaka jest najgorsza kłamstwo, jakie powiedziałeś/powiedziałaś, żeby uniknąć seksu?",
+    penalty: 2,
+  },
+  {
+    text: "Opowiedz o najbardziej awkward porannej erekcji lub mokrej sytuacji w złym momencie.",
+    penalty: 2,
+  },
+  {
+    text: "Czy kiedykolwiek sprawdzałeś/sprawdzałaś telefon partnera bez wiedzy?",
+    penalty: 2,
+  },
+  {
+    text: "Jaki był twój najbardziej desperacki moment podrywu?",
+    penalty: 2,
+  },
+  {
+    text: "Opisz najgorszy 'walk of shame' po nocy z kimś.",
+    penalty: 2,
+  },
 ];
+
 export const hardcoreQuestions: Question[] = [
   {
     text: "Z kim z obecnych nikomu byś się nie pochwalił(a), że coś między wami było, ale mógłbyś/mogłabyś to rozważyć?",
@@ -431,6 +566,70 @@ export const hardcoreQuestions: Question[] = [
   },
   {
     text: "Przyznaj się do fantazji o gwałcie (fikcyjnej).",
+    penalty: 3,
+  },
+  {
+    text: "Czy kiedykolwiek manipulowałeś/manipulowałaś czyimiś uczuciami, żeby dostać to, czego chcesz?",
+    penalty: 3,
+  },
+  {
+    text: "Jaka jest najgorsza rzecz, jaką zrobiłeś/zrobiłaś byłemu/byłej po rozstaniu?",
+    penalty: 3,
+  },
+  {
+    text: "Czy kiedykolwiek miałeś/miałaś threesome lub inną grupową przygodę? Opowiedz ogólnie.",
+    penalty: 3,
+  },
+  {
+    text: "Opisz swoją najbardziej zakazaną fantazję seksualną.",
+    penalty: 3,
+  },
+  {
+    text: "Czy kiedykolwiek celowo sprawiłeś/sprawiłaś, że ktoś poczuł się źle ze swoim ciałem?",
+    penalty: 3,
+  },
+  {
+    text: "Jaka jest twoja najciemniejsza tajemnica związana z pieniędzmi lub seksem?",
+    penalty: 3,
+  },
+  {
+    text: "Czy kiedykolwiek miałeś/miałaś romans z kimś znacznie starszym lub w pozycji władzy?",
+    penalty: 3,
+  },
+  {
+    text: "Czy kiedykolwiek nagrywałeś/nagrywałaś seks bez wiedzy drugiej osoby?",
+    penalty: 3,
+  },
+  {
+    text: "Jaka jest najgorsza rzecz, jaką zrobiłeś/zrobiłaś, żeby się zemścić na partnerze?",
+    penalty: 3,
+  },
+  {
+    text: "Opisz swoją najbardziej ekstremalną fantazję BDSM lub dominacji/poddania.",
+    penalty: 3,
+  },
+  {
+    text: "Czy kiedykolwiek płaciłeś/płaciłaś za seks lub usługi erotyczne?",
+    penalty: 3,
+  },
+  {
+    text: "Jaka jest twoja najgłębsza niepewność związana z seksem lub ciałem, której nikt nie zna?",
+    penalty: 3,
+  },
+  {
+    text: "Czy kiedykolwiek miałeś/miałaś kontakt seksualny z kimś z tej samej płci, nawet eksperymentalny?",
+    penalty: 3,
+  },
+  {
+    text: "Opowiedz o sytuacji, w której wykorzystałeś/wykorzystałaś czyjąś słabość emocjonalną dla seksu.",
+    penalty: 3,
+  },
+  {
+    text: "Czy kiedykolwiek miałeś/miałaś obsesję na punkcie kogoś, która poszła za daleko?",
+    penalty: 3,
+  },
+  {
+    text: "Jaka jest najbardziej toksyczna relacja, w jakiej byłeś/byłaś i dlaczego w niej zostałeś/zostałaś?",
     penalty: 3,
   },
 ];

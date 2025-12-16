@@ -77,7 +77,48 @@ export const normalTasks: Question[] = [
     text: "Zatancz erotyczny taniec na {target} kara 2 kieliszki",
     penalty: 2,
   },
+  {
+    text: "Zaśpiewaj refren swojej ulubionej piosenki, ale zmieniając wszystkie słowa na „meow” lub „hau hau”.",
+    penalty: 1,
+  },
+  {
+    text: "Zrób 10 pompek, a przy każdej mów głośno jedną rzecz, za którą się wstydzisz.",
+    penalty: 1,
+  },
+  {
+    text: "Pokaż grupie swój najgorszy taniec imprezowy i wykonaj go przez 15 sekund.",
+    penalty: 1,
+  },
+  {
+    text: "Zadzwoń do losowego kontaktu z telefonu i powiedz „Kocham cię najbardziej na świecie” – możesz się rozłączyć po tym.",
+    penalty: 1,
+  },
+  {
+    text: "Przez minutę mów z dziwnym akcentem wybranym przez grupę.",
+    penalty: 1,
+  },
+  {
+    text: "Zrób selfie z najgłupszą miną i ustaw je jako tapetę na 3 rundy.",
+    penalty: 1,
+  },
+  {
+    text: "Powąchaj pachy każdej osoby w pokoju i oceń, która pachnie najlepiej.",
+    penalty: 1,
+  },
+  {
+    text: "Zjedz łyżeczkę czegoś ostrego lub kwaśnego, co wybierze grupa.",
+    penalty: 1,
+  },
+  {
+    text: "Odegraj scenkę randki z krzesłem – bądź jak najbardziej desperacki/a.",
+    penalty: 1,
+  },
+  {
+    text: "Przez 30 sekund naśladuj zwierzę wybrane przez grupę.",
+    penalty: 1,
+  },
 ];
+
 export const hardTasks: Question[] = [
   {
     text: "Pocałuj stopę osoby po twojej prawej.",
@@ -99,7 +140,6 @@ export const hardTasks: Question[] = [
     text: "Pokaż wszystkim ostatnią pornograficzną stronę, którą odwiedziłeś/aś.",
     penalty: 2,
   },
-
   {
     text: "Jeśli jesteście u ciebie, pozwól grupie obejrzeć zawartość twojej lodówki i skomentować, co jest najbardziej obrzydliwe lub zastanawiające.",
     penalty: 3,
@@ -328,7 +368,48 @@ export const hardTasks: Question[] = [
     text: "Zrób malinke na szyji {target} .",
     penalty: 2,
   },
+  {
+    text: "Pocałuj w usta osobę tej samej płci (jeśli jesteś hetero).",
+    penalty: 2,
+  },
+  {
+    text: "Zrób 15-sekundowy striptiz do pasa.",
+    penalty: 2,
+  },
+  {
+    text: "Pozwól {target} połaskotać cię w dowolnym miejscu przez 20 sekund.",
+    penalty: 2,
+  },
+  {
+    text: "Zliż bitą śmietanę lub inny produkt z ręki {target}.",
+    penalty: 2,
+  },
+  {
+    text: "Odtwórz swoją najbardziej żenującą scenę łóżkową z poduszką.",
+    penalty: 2,
+  },
+  {
+    text: "Pocałuj w brzuch osobę po prawej stronie.",
+    penalty: 2,
+  },
+  {
+    text: "Zatańcz slow dance z {target} przez 30 sekund – bardzo blisko.",
+    penalty: 2,
+  },
+  {
+    text: "Powiedz głośno swoją najbrudniejszą fantazję (bez wskazywania osób z grupy).",
+    penalty: 2,
+  },
+  {
+    text: "Zrób masaż pleców {target} przez 30 sekund.",
+    penalty: 2,
+  },
+  {
+    text: "Pokaż grupie swój najseksowniejszy ruch taneczny.",
+    penalty: 2,
+  },
 ];
+
 export const hardcoreTasks: Question[] = [
   {
     text: "Otwórz Messenger i pokaż nazwy 5 ostatnich konwersacji. Grupa wybiera jedną, z której na głos czytasz 5 ostatnich wiadomości (bez imion).",
@@ -557,5 +638,45 @@ export const hardcoreTasks: Question[] = [
   {
     text: "Pocałuj w usta osobę, którą uważasz za najmniej atrakcyjną w grupie.",
     penalty: 2,
+  },
+  {
+    text: "Zdejmij jedną warstwę ubrania i zostań bez niej do końca gry.",
+    penalty: 3,
+  },
+  {
+    text: "Pozwól grupie wybrać miejsce na twoim ciele, gdzie {target} zrobi ci malinkę.",
+    penalty: 3,
+  },
+  {
+    text: "Zrób pełny striptiz do bielizny przed całą grupą.",
+    penalty: 3,
+  },
+  {
+    text: "Symuluj seks oralny na bananie lub innym przedmiocie przez 15 sekund.",
+    penalty: 3,
+  },
+  {
+    text: "Pocałuj w usta dwie osoby jednocześnie (trójkątny pocałunek).",
+    penalty: 3,
+  },
+  {
+    text: "Pozwól {target} dotknąć cię w dowolnym miejscu przez ubranie przez 10 sekund.",
+    penalty: 3,
+  },
+  {
+    text: "Odtwórz swoją ulubioną pozycję seksualną z {target} (przez ubranie, symulacja).",
+    penalty: 3,
+  },
+  {
+    text: "Zdejmij bieliznę i oddaj ją {target} na resztę imprezy.",
+    penalty: 3,
+  },
+  {
+    text: " {target} może dotknąć cię w intymnym miejscu przez ubranie.",
+    penalty: 3,
+  },
+  {
+    text: "Zrób masaż erotyczny {target} przez 1 minutę.",
+    penalty: 3,
   },
 ];
