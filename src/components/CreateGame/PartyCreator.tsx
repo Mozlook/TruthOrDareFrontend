@@ -21,6 +21,29 @@ const PartyCreator: React.FC<Props> = ({ party, setParty }) => {
     setParty(filteredParty);
   }
 
+  function MoveUp(idx: number) {
+    if (idx <= 0) return;
+    if (idx >= party.length) return;
+
+    const newParty = [...party];
+    const tmp = newParty[idx - 1];
+    newParty[idx - 1] = newParty[idx];
+    newParty[idx] = tmp;
+
+    setParty(newParty);
+  }
+
+  function MoveDown(idx: number) {
+    if (idx >= party.length - 1) return;
+
+    const newParty = [...party];
+    const tmp = newParty[idx + 1];
+    newParty[idx + 1] = newParty[idx];
+    newParty[idx] = tmp;
+
+    setParty(newParty);
+  }
+
   return (
     <div className="space-y-3">
       {party.length > 0 && (
@@ -32,13 +55,33 @@ const PartyCreator: React.FC<Props> = ({ party, setParty }) => {
                   <span className="rounded-full border border-zinc-700 bg-zinc-900/80 px-4 py-1.5 text-sm text-zinc-100">
                     {member}
                   </span>
-                  <button
-                    type="button"
-                    onClick={() => RemoveFromParty(idx)}
-                    className="ml-3 self-center rounded-full border border-red-500/70 bg-red-600/90 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-white shadow-sm shadow-red-900/40 hover:bg-red-500 active:scale-95 transition"
-                  >
-                    usuń
-                  </button>
+                  <div>
+                    {idx > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => MoveUp(idx)}
+                        className="mr-3 rounded-full border border-zinc-700 bg-zinc-900/80 px-2.5 py-1 text-xs font-medium text-zinc-100 shadow-sm shadow-black/40 hover:bg-zinc-800 active:scale-95 transition"
+                      >
+                        ↑
+                      </button>
+                    )}
+                    {idx < party.length - 1 && (
+                      <button
+                        type="button"
+                        onClick={() => MoveDown(idx)}
+                        className="mr-3 rounded-full border border-zinc-700 bg-zinc-900/80 px-2.5 py-1 text-xs font-medium text-zinc-100 shadow-sm shadow-black/40 hover:bg-zinc-800 active:scale-95 transition"
+                      >
+                        ↓
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => RemoveFromParty(idx)}
+                      className="ml-3 self-center rounded-full border border-red-500/70 bg-red-600/90 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-white shadow-sm shadow-red-900/40 hover:bg-red-500 active:scale-95 transition"
+                    >
+                      usuń
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
